@@ -258,3 +258,16 @@ footer {
 
 /* Comment PHP CSS styling */
 
+#comment-form {
+    display: flex;
+
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+
+    grid-column: 3;
+}
+
+input[type=text] {
+    width: 10em;
+}

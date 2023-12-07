@@ -65,10 +65,10 @@
 
     <main>
         <div class="grid-container">
-
+            
             <form action="comment.php" method="POST">
 
-                <div>
+                <div class="who">
                     <label>From Who?</label>
                     <input type="text" name="name" id="name" placeholder="Insert Your name Here" required>
                 </div>
@@ -92,8 +92,7 @@
                 </div>
 
             </form>
-
-            <div class="margin-color"></div>
+            
         </div>
     </main>
 
