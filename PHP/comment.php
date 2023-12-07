@@ -2,14 +2,15 @@
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        
-
         if(!filter_var($email, filter: FILTER_VALIDATE_EMAIL)) {
             echo "Good";
         } else {
             echo "Bad";
         }
         
+        $name = filter_input(INPUT_POST, "name");
+        $email = filter_input(INPUT_POST, "email");
+        $comment = filter_input(INPUT_POST, "comment");
         
 
     }
@@ -66,33 +67,30 @@
     <main>
         <div class="grid-container">
             
-            <form action="comment.php" method="POST">
+            <div id="comment-form">
+                <form action="comment.php" method="POST" id="form1-move">
 
-                <div class="who">
                     <label>From Who?</label>
                     <input type="text" name="name" id="name" placeholder="Insert Your name Here" required>
-                </div>
-                <div>
+                
                     <label>Insert your Email: </label>
                     <input type="email" name="email" id="email" required>
-                </div>
-                <div>
+                    
+                
                     <label>Select Which Applies to you: </label>
                     <select required>
                         <option value="student">Student</option>
                         <option value="teacher">Teacher</option>
                     </select>
-                </div>
-                <div>
+                    
+                
                     <label>Please leave a Comment</label>
                     <input type="text" name="comment" id="comment" placeholder="Leave a Message" required>
-                </div>
-                <div>
+                    
                     <input type="submit" value="submit" id="name">
-                </div>
+                </form>
+`           </div>
 
-            </form>
-            
         </div>
     </main>
 
