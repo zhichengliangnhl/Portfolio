@@ -2,21 +2,36 @@
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        if(!filter_var($email, filter: FILTER_VALIDATE_EMAIL)) {
-            echo "Good";
-        } else {
-            echo "Bad";
-        }
-        
         $name = filter_input(INPUT_POST, "name");
         $email = filter_input(INPUT_POST, "email");
         $comment = filter_input(INPUT_POST, "comment");
+        
+        $errorflag = false;
+        $errors = array();  
+
+        if(empty($name)) {
+            $errorflag = true;
+            array_push($errors, "Please fill in your name");
+        } 
+        elseif(empty($email)) {
+            $errorflag = true;
+            array_push($errors, "Please fill in your email");
+        } 
+        elseif(empty($comment)) {
+            $errorflag = true;
+            array_push($errors, "Please leave a comment");
+        }
+        else {
+            foreach($errors as $errors) {
+                echo "<p>" . $errors . "</p>";
+            }
+        }
+
         
 
     }
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -71,10 +86,10 @@
                 <form action="comment.php" method="POST" id="form1-move">
 
                     <label>From Who?</label>
-                    <input type="text" name="name" id="name" placeholder="Insert Your name Here" required>
+                    <input type="text" name="name" id="name" placeholder="Insert Your name Here">
                 
                     <label>Insert your Email: </label>
-                    <input type="email" name="email" id="email" required>
+                    <input type="email" name="email" id="email">
                     
                 
                     <label>Select Which Applies to you: </label>
@@ -85,7 +100,7 @@
                     
                 
                     <label>Please leave a Comment</label>
-                    <input type="text" name="comment" id="comment" placeholder="Leave a Message" required>
+                    <input type="text" name="comment" id="comment" placeholder="Leave a Message">
                     
                     <input type="submit" value="submit" id="name">
                 </form>
