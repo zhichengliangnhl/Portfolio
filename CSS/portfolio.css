@@ -6,6 +6,12 @@
     box-sizing: border-box;
 }
 
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 /* Header */
 
 header {
@@ -98,10 +104,6 @@ li a {
     gap: 2em;
 
     /* background-color: #B2C8BA; */
-}
-
-main {
-    display: grid;
 }
 
 .item {
@@ -244,6 +246,7 @@ main {
 
 footer {
     grid-column: span 6;
+    margin-top: auto;
 }
 
 .margin-color {
@@ -253,7 +256,6 @@ footer {
     grid-row-start: 4;
 }
 
-
 /* ---------------------------------- */
 
 /* Comment PHP CSS styling */
@@ -261,13 +263,58 @@ footer {
 #comment-form {
     display: flex;
 
+    justify-content: center;
     border-radius: 5px;
     background-color: #f2f2f2;
-    padding: 20px;
+    padding: 25px;
 
     grid-column: 3;
+    grid-row: 4;
+
+    width: 30em;
+    height: 20em;
 }
 
 input[type=text] {
-    width: 10em;
+    width: 15em;
+}
+
+input[type=submit] {
+
+}
+
+.error {
+    color: #af4242;
+    background-color:  #Fde8ec;
+    padding: 10px;
+    display: none;
+    transform: translateV(-20px);
+    margin-bottom: 20px;
+}
+
+.name-error {
+    color: #af4242;
+    background-color:  #Fde8ec;
+    padding: 10px;
+    display: none;
+    transform: translateV(-20px);
+    margin-bottom: 20px;
+}
+
+.email-error {
+    color: #af4242;
+    background-color:  #Fde8ec;
+    padding: 10px;
+    display: none;
+    transform: translateV(-20px);
+    margin-bottom: 20px;
+}
+
+.comment-error {
+    color: #af4242;
+    background-color:  #Fde8ec;
+    padding: 10px;
+    display: none;
+    transform: translateV(-20px);
+    margin-bottom: 20px;
 }
